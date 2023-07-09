@@ -1,5 +1,5 @@
-import React, {useState,useRef} from 'react'
-import Navbar from './Navbar';
+import React, {useState} from 'react'
+// import Navbar from './Navbar';
 
 export default function TextForm(props) {
     const[text,setText] = useState("Enter text here..");
@@ -49,7 +49,7 @@ export default function TextForm(props) {
     let wrds=0;
     let i =0;
     for(i=0;i<l;i++){
-        if(arr[i] != ""){
+        if(arr[i] !== ""){
             wrds++;
         }
     }
@@ -64,18 +64,18 @@ export default function TextForm(props) {
         <label htmlFor="myBox" className="form-label" style={{color: props.mode === 'dark' ? 'white' : '#212540'}}>{props.heading}</label>
         <textarea className="form-control" value={text} ref={props.textref} onChange={onChangeHandler} id="myBox" rows="5" ></textarea>
     </div>
-    <button className={` btn btn-${props.btn}`} onClick={onHandleUpChange}>Convert to Uppercase</button>
-    <button className={` btn btn-${props.btn} mx-2`} onClick={onHandleLoChange}>Convert to Lowercase</button>
+    <button disabled={text.length===0} className={` btn btn-${props.btn}`} onClick={onHandleUpChange}>Convert to Uppercase</button>
+    <button disabled={text.length===0} className={` btn btn-${props.btn} mx-2`} onClick={onHandleLoChange}>Convert to Lowercase</button>
 
     <div className="btn-group">
-    <button type="button" className={` btn btn-${props.btn}`}>Color Change</button>
-    <button type="button" className={`btn btn-${props.btn} dropdown-toggle dropdown-toggle-split`} data-bs-toggle="dropdown" aria-expanded="false">
+    <button disabled={text.length===0} type="button" className={` btn btn-${props.btn}`}>Color Change</button>
+    <button disabled={text.length===0} type="button" className={`btn btn-${props.btn} dropdown-toggle dropdown-toggle-split`} data-bs-toggle="dropdown" aria-expanded="false">
     </button>
     <ul className="dropdown-menu">
-        <li><a className="dropdown-item" href="#" onClick={onHandleColor}>Default</a></li>
-        <li><a className="dropdown-item bg-danger" href="#" onClick={onHandleColorRed}>Red</a></li>
-        <li><a className="dropdown-item bg-success" href="#" onClick={onHandleColorGreen}>Green</a></li>
-        <li><a className="dropdown-item bg-warning" href="#" onClick={onHandleColorYellow}>Yellow</a></li>
+        <li><a className="dropdown-item" href="/" onClick={onHandleColor}>Default</a></li>
+        <li><a className="dropdown-item bg-danger" href="/" onClick={onHandleColorRed}>Red</a></li>
+        <li><a className="dropdown-item bg-success" href="/" onClick={onHandleColorGreen}>Green</a></li>
+        <li><a className="dropdown-item bg-warning" href="/" onClick={onHandleColorYellow}>Yellow</a></li>
     </ul>
     </div>
     
