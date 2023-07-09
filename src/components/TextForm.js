@@ -64,12 +64,12 @@ export default function TextForm(props) {
         <label htmlFor="myBox" className="form-label" style={{color: props.mode === 'dark' ? 'white' : '#212540'}}>{props.heading}</label>
         <textarea className="form-control" value={text} ref={props.textref} onChange={onChangeHandler} id="myBox" rows="5" ></textarea>
     </div>
-    <button disabled={text.length===0} className={` btn btn-${props.btn}`} onClick={onHandleUpChange}>Convert to Uppercase</button>
-    <button disabled={text.length===0} className={` btn btn-${props.btn} mx-2`} onClick={onHandleLoChange}>Convert to Lowercase</button>
+    <button disabled={text.length===0} className={` btn btn-${props.btn} my-2`} onClick={onHandleUpChange}>Convert to Uppercase</button>
+    <button disabled={text.length===0} className={` btn btn-${props.btn} mx-2 my-2`} onClick={onHandleLoChange}>Convert to Lowercase</button>
 
     <div className="btn-group">
-    <button disabled={text.length===0} type="button" className={` btn btn-${props.btn}`}>Color Change</button>
-    <button disabled={text.length===0} type="button" className={`btn btn-${props.btn} dropdown-toggle dropdown-toggle-split`} data-bs-toggle="dropdown" aria-expanded="false">
+    <button disabled={text.length===0} type="button" className={` btn btn-${props.btn} my-2`}>Color Change</button>
+    <button disabled={text.length===0} type="button" className={`btn btn-${props.btn} dropdown-toggle dropdown-toggle-split my-2`} data-bs-toggle="dropdown" aria-expanded="false">
     </button>
     <ul className="dropdown-menu">
         <li><a className="dropdown-item" href="/" onClick={onHandleColor}>Default</a></li>
